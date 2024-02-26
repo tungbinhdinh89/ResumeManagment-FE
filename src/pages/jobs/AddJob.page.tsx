@@ -45,7 +45,7 @@ function AddJob() {
   }, []);
 
   const handleClickSaveButton = () => {
-    if (job.title === "" || job.level === "") {
+    if (job.title === "" || job.level === "" || job.companyId === "") {
       alert("Fill all fields");
       return;
     }
@@ -69,14 +69,14 @@ function AddJob() {
           label="Job Title"
           variant="outlined"
           value={job.title}
-          onChange={(e) => setJob({ ...job, title: e.target.value })}
+          onChange={(e) => setJob({ ...job, title: e.target?.value })}
         />
         <FormControl fullWidth>
           <InputLabel>Level</InputLabel>
           <Select
             value={job.level}
             label="Job Level"
-            onChange={(e) => setJob({ ...job, level: e.target.value })}
+            onChange={(e) => setJob({ ...job, level: e.target?.value })}
           >
             {levelsArray.map((item) => (
               <MenuItem key={item} value={item}>
@@ -91,7 +91,7 @@ function AddJob() {
           <Select
             value={job.companyId}
             label="Company"
-            onChange={(e) => setJob({ ...job, companyId: e.target.value })}
+            onChange={(e) => setJob({ ...job, companyId: e.target?.value })}
           >
             {companies.map((item) => (
               <MenuItem key={item.id} value={item.id}>
