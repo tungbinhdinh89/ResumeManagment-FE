@@ -3,10 +3,10 @@ import Navbar from "./components/navbar/Navbar.component";
 import { ThemeContext } from "./context/theme.context";
 import { Routes, Route } from "react-router-dom";
 import CustomeLinearProgress from "./components/custome-linear-progress/CustomeLinearProgress.component";
-import Companies from "./pages/home/companies/Companies.page";
 
 // Import with lazy loading
 const Home = lazy(() => import("./pages/home/Home.page"));
+const Companies = lazy(() => import("./pages/companies/Companies.page"));
 
 const App = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -20,6 +20,7 @@ const App = () => {
         <Suspense fallback={<CustomeLinearProgress />}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/companies" index element={<Companies />} />
           </Routes>
         </Suspense>
       </div>
