@@ -3,3 +3,8 @@ export interface ICompany {
   name: string;
   size: string;
 }
+
+export interface ICreateCompanyDto {
+  name: string;
+  size: string;
+}

@@ -7,6 +7,7 @@ import CustomeLinearProgress from "./components/custome-linear-progress/CustomeL
 // Import with lazy loading
 const Home = lazy(() => import("./pages/home/Home.page"));
 const Companies = lazy(() => import("./pages/companies/Companies.page"));
+const AddCompany = lazy(() => import("./pages/companies/AddCompany.page"));
 
 const App = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -20,7 +21,10 @@ const App = () => {
         <Suspense fallback={<CustomeLinearProgress />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/companies" index element={<Companies />} />
+            <Route path="/companies">
+              <Route index element={<Companies />} />
+              <Route path="add" index element={<AddCompany />} />
+            </Route>
           </Routes>
         </Suspense>
       </div>
