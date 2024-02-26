@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import "./jobs-grid.scss";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import moment from "moment";
 import { IJob } from "../../types/global.typing";

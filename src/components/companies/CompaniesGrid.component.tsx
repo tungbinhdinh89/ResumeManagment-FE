@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import "./companies-grid.scss";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import moment from "moment";
 import { ICompany } from "../../types/global.typing";
